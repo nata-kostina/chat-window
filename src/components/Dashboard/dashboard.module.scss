@@ -1,0 +1,13 @@
+.dashboard {
+    background-image: url(../../assets/chat-bg-2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    max-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+}

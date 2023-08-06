@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.header {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 1.5rem 0;
+    @include container-padding;
+
+    height: $size-header;
+    background-color: rgba($color-primary, 0.7);
+
+    border-end-end-radius: 40px;
+
+    & .user {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 1.6rem;
+
+        &__name {
+            grid-area: 1 / 2 / 2 / 3;
+
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: $color-white;
+        }
+
+        &__img-container {
+            grid-area: 1 / 1 / 3 / 2;
+
+            height: 4.8rem;
+            width: 4.8rem;
+            border-radius: 100%;
+            overflow: hidden;
+        }
+        &__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &__status {
+            grid-area: 2 / 2 / 3 / 3;
+
+            font-size: 1.1rem;
+            color: #f4eeff;
+        }
+    }
+}

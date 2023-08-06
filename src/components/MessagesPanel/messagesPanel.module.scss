@@ -1,0 +1,31 @@
+@import "../../styles/variables";
+
+$border-top-left-radius: 4.5rem;
+.panel {
+    background-color: rgba($color-primary, 0.7);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    overflow: hidden;
+
+    &__inner {
+        background-color: #ffffff;
+        background-image: url(../../assets/chat-bg-2.png);
+        background-position: 0px calc(0rem - $size-header);
+        background-size: contain;
+        background-repeat: repeat;
+        border-top-left-radius: $border-top-left-radius;
+        overflow: auto;
+
+        & .message-list {
+            list-style: none;
+            padding: 0px 1.5rem 1rem;
+
+            &__item {
+                min-height: 9rem;
+                margin-bottom: 0.8rem;
+            }
+        }
+    }
+}
