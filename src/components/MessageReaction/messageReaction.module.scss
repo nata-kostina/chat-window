@@ -22,6 +22,12 @@
     outline: unset;
     cursor: pointer;
 
+    &:active,
+    &:focus-visible {
+        outline: unset;
+        border: 1px solid $color-black;
+    }
+
     &_me {
         left: -1.8rem;
     }

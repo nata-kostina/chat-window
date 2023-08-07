@@ -79,6 +79,12 @@
             width: 100%;
             height: auto;
         }
+
+        &:active,
+        &:focus-visible {
+            outline: unset;
+            border: 1px solid $color-black;
+        }
     }
 
     &_me {

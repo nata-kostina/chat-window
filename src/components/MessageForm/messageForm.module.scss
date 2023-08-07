@@ -14,7 +14,7 @@
     }
 
     .form {
-        padding: 1rem 0;
+        padding: 1.2rem 0;
 
         display: flex;
         justify-content: space-between;
@@ -23,7 +23,7 @@
         & .input {
             flex-grow: 1;
             min-width: 0;
-            padding: 1.3rem 0.7rem;
+            padding: 1rem 0.7rem;
             max-height: 100px;
 
             resize: none;
@@ -39,9 +39,14 @@
             &::placeholder {
                 color: #ccd7d7;
             }
+
+            &:focus {
+                border: none;
+            }
         }
 
         & .btn {
+            display: block;
             border: none;
             outline: unset;
 
@@ -73,8 +78,15 @@
             &-emoji {
                 width: 3rem;
                 height: 3rem;
-                padding: 0.5rem;
+                // padding: 0.5rem;
                 color: $color-primary;
+                line-height: 1;
+            }
+
+            &:active,
+            &:focus-visible {
+                outline: unset;
+                border: 1px solid $color-black;
             }
         }
     }

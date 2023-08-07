@@ -63,7 +63,7 @@ export const MessageForm: FC = () => {
               handleSubmit();
             }}
             name="conversationForm"
-          >
+          >            
             <button
               type="button"
               className={cn(st.btn, st["btn-emoji"])}
@@ -85,7 +85,7 @@ export const MessageForm: FC = () => {
               placeholder="Enter Message..."
               maxRows={6}
             />
-            <button type="submit" className={cn(st.btn, st["btn-send"])}>
+             <button type="submit" className={cn(st.btn, st["btn-send"])}>
               <IoSendSharp className={st["btn-icon"]} />
             </button>
           </form>
