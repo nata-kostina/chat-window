@@ -13,11 +13,11 @@ Here you can see the app: [https://chat-window-by-natallia.netlify.app/](https:/
 - delete message;
 - copy message text to clipboard;
 - react on messages (❤️, 👍, 👎);
-- simulation of someone else's typing
-- scroll to bottom button
+- simulation of someone else's typing;
+- scroll to bottom;
 - responsive design (mobile-first approach);
 - animations;
-- sound;
+- sounds;
 - error handling;
 
 
