@@ -18,6 +18,7 @@ export const SettingsModal: FC<ISettingsModal> = ({
   const modalRef = useRef<HTMLDivElement | null>(null);
   const [scope, animate] = useAnimate();
 
+  // check if modal is not out of the viewport
   let modalX = 0;
   let modalY = 0;
   if (targetRect !== null) {
@@ -31,6 +32,17 @@ export const SettingsModal: FC<ISettingsModal> = ({
       modalX = modalX - modalOffset;
     }
   }
+
+  const animateReaction = (reaction: { code: number; name: string }) => {
+    animate(
+      "#" + reaction.name,
+      { y: ["3px", "-20px"], scale: 1.1 },
+      {
+        ease: "easeOut",
+        onComplete: () => addReaction(String.fromCodePoint(reaction.code)),
+      }
+    );
+  };
 
   return createPortal(
     <div className={st.modal}>
@@ -63,20 +75,7 @@ export const SettingsModal: FC<ISettingsModal> = ({
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className={st.btn}
-                onClick={() => {
-                  animate(
-                    "#" + reaction.name,
-                    {
-                      y: ["3px", "-20px"],
-                      scale: 1.1,
-                    },
-                    {
-                      ease: "easeOut",
-                      onComplete: () =>
-                        addReaction(String.fromCodePoint(reaction.code)),
-                    }
-                  );
-                }}
+                onClick={() => animateReaction(reaction)}
               >
                 {String.fromCodePoint(reaction.code)}
               </motion.button>
@@ -85,24 +84,20 @@ export const SettingsModal: FC<ISettingsModal> = ({
         </ul>
         <ul className={st["actions-list"]}>
           <li className={st["actions-list__item"]}>
-            {/* <div className={st["action-btn-container"]}> */}
-              <button className={st.btn} onClick={handleCopy}>
-                <span className={st["action-icon-container"]}>
-                  <AiOutlineCopy className={st["action-icon"]} />
-                </span>
-                Copy
-              </button>
-            {/* </div> */}
+            <button className={st.btn} onClick={handleCopy}>
+              <span className={st["action-icon-container"]}>
+                <AiOutlineCopy className={st["action-icon"]} />
+              </span>
+              Copy
+            </button>
           </li>
           <li className={st["actions-list__item"]}>
-            {/* <div className={st["action-btn-container"]}> */}
-              <button className={st.btn} onClick={handleDelete}>
-                <span className={st["action-icon-container"]}>
-                  <RiDeleteBin7Line className={st["action-icon"]} />
-                </span>
-                Delete
-              </button>
-            {/* </div> */}
+            <button className={st.btn} onClick={handleDelete}>
+              <span className={st["action-icon-container"]}>
+                <RiDeleteBin7Line className={st["action-icon"]} />
+              </span>
+              Delete
+            </button>
           </li>
         </ul>
       </motion.div>

@@ -27,16 +27,18 @@ export const MessagePanel: FC = () => {
   const [selectedMessageRect, setSelectedMessageRect] = useState<Rect | null>(
     null
   );
+  // scroll to the bottom if the user send the message
   const setRef = useCallback((node: HTMLLIElement | null, fromMe: boolean) => {
     if (node && fromMe) {
       node.scrollIntoView({ behavior: "smooth" });
     }
   }, []);
-
+  // open modal with settings
   const showSettings = (
     id: string,
     btnRef: React.MutableRefObject<HTMLButtonElement | null>
   ) => {
+    // get position of settings button
     if (btnRef.current) {
       const rect = btnRef.current.getBoundingClientRect();
       setSelectedMessageRect({
@@ -49,25 +51,26 @@ export const MessagePanel: FC = () => {
       setAreSettingsVisible(true);
     }
   };
-
+  // hide settings modal
   const hideSettings = () => {
     setAreSettingsVisible(false);
   };
-
+  // handle copy to clipboard
   const handleCopy = () => {
     const message = conversation.find(
       (message) => message.id === selectedMessageId
     );
     if (message) {
       navigator.clipboard.writeText(message.body);
-      setIsPopupVisible(true);
+      setIsPopupVisible(true); // show notification
       setTimeout(() => {
+        // close notification after 2 seconds
         setIsPopupVisible(false);
       }, 2000);
     }
     hideSettings();
   };
-
+  // handle delete message
   const handleDelete = () => {
     if (selectedMessageId) {
       const sound = new Audio(DeleteSound);
@@ -84,7 +87,7 @@ export const MessagePanel: FC = () => {
     }
     hideSettings();
   };
-
+  // add reaction to the message
   const addReaction = (reaction: string) => {
     const message = conversation.find(
       (message) => message.id === selectedMessageId
@@ -101,7 +104,7 @@ export const MessagePanel: FC = () => {
     }
     hideSettings();
   };
-
+  // remove reaction from the message
   const removeReaction = (messageId: string) => {
     const message = conversation.find((message) => message.id === messageId);
     if (message) {
@@ -109,7 +112,7 @@ export const MessagePanel: FC = () => {
       editMessage(message);
     }
   };
-
+// messages that go after the deleted message
   const animatingMessages = conversation.slice(lastChangedIndex);
 
   return (
@@ -126,7 +129,6 @@ export const MessagePanel: FC = () => {
                 <AnimatePresence>
                   {conversation.map((message, index) => {
                     const lastMessage = conversation.length - 1 === index;
-
                     return (
                       <motion.li
                         layout

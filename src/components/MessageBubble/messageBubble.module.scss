@@ -4,7 +4,7 @@
 .message {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
 
     &-container {
         position: relative;
@@ -82,7 +82,7 @@
     }
 
     &_me {
-        align-items: end;
+        align-items: flex-end;
         & .message__body {
             background-image: $gradient-secondary;
             color: $color-black;
@@ -94,7 +94,7 @@
         }
 
         & .message__info {
-            justify-content: end;
+            justify-content: flex-end;
         }
 
         & .message__settings {

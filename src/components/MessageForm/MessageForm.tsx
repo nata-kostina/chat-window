@@ -14,7 +14,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export const MessageForm: FC = () => {
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(""); // textarea value
   const [isEmojiPickerVisible, setIsEmojiPickerVisible] = useState(false);
   const { sendMessage } = useConversations() as IConversationsContext;
   const handleOnChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -28,14 +28,13 @@ export const MessageForm: FC = () => {
     setIsEmojiPickerVisible((prev) => !prev);
   };
   const addEmoji = (e: EmojiClickData) => {
+    // convert emoji codes to hex
     const codes = e.unified.split("-");
     const codesHex = codes.map((code) => +("0x" + code));
     const emoji = String.fromCodePoint(...codesHex);
     let newInputValue = "";
     if (inputRef.current) {
       const cursorPosition = inputRef.current.selectionStart;
-      newInputValue =
-        value.slice(0, cursorPosition) + emoji + value.slice(cursorPosition);
       newInputValue =
         value.slice(0, cursorPosition) + emoji + value.slice(cursorPosition);
       inputRef.current.setSelectionRange(

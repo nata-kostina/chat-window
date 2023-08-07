@@ -28,7 +28,7 @@
         & .btn {
             display: flex;
             align-items: center;
-            justify-content: start;
+            justify-content: flex-start;
 
             outline: unset;
             border: none;
@@ -61,7 +61,7 @@
             &__item {
                 display: flex;
                 align-items: center;
-                justify-content: start;
+                justify-content: flex-start;
                 width: 100%;
 
                 transition: all 0.3s ease;

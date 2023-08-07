@@ -13,6 +13,7 @@ export const MessageBubble: FC<IMessageBubble> = ({
   showSettings,
   removeReaction,
 }) => {
+  // format date to HH:MM style
   const formattedDate = timeFormatter.format(message.date);
   const settingsBtnRef = useRef<HTMLButtonElement | null>(null);
 

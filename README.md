@@ -4,7 +4,7 @@ This is a simple SPA that displays a chat window. The user can send the message.
 
 ## Demo
 
-Here you can see the app: [https://nata-kostina.github.io/chat-window/](https://nata-kostina.github.io/chat-window/)
+Here you can see the app: [https://chat-window-by-natallia.netlify.app/](https://chat-window-by-natallia.netlify.app/)
 
 ## Features
 
@@ -45,6 +45,9 @@ $ npm install
   
 # Run the app
 $ npm run start
+
+# Build the app
+$ npm run build
 ```
 
 The app will be run at [http://localhost:3000/](http://localhost:3000/)
