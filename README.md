@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+# 💬 Chat Window
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple SPA that displays a chat window. The user can send the message. The app simulates someone else's messages every 8 seconds.
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+Here you can see the app: [https://nata-kostina.github.io/chat-window/](https://nata-kostina.github.io/chat-window/)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- send messages (by typing Enter and by clicking Send button);
+- add emoji to message;
+- delete message;
+- copy message text to clipboard;
+- react on messages (❤️, 👍, 👎);
+- simulation of someone else's typing
+- responsive design (mobile-first approach);
+- animations;
+- sound;
+- error handling;
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Built With  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Typescript](https://www.typescriptlang.org/) - a strongly typed programming language that builds on JavaScript.
+- [React](https://reactjs.org/) - a JavaScript library for building user interfaces.
+- [Framer Motion](https://www.framer.com/motion/) - animation library.
+- [SASS](https://sass-lang.com/) - a CSS pre-processor.
 
-### `npm run build`
+## Screenshots
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="https://i.postimg.cc/mrThYh2Z/screenshot-desktop.jpg"  alt= “logo” width="value"  height="300px">
+<img src="https://i.postimg.cc/0QYsc0tL/screenshot-mobile.jpg"  alt= “logo” width="value"  height="300px">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To clone and run this application, you'll need [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com/)) installed on your computer. From your command line:
 
-### `npm run eject`
+```
+# Clone this repository
+$ git clone https://github.com/nata-kostina/chat-window.git
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Install dependencies
+$ npm install
+  
+# Run the app
+$ npm run start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The app will be run at [http://localhost:3000/](http://localhost:3000/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contacts
+- Email: natakostina123@gmail.com
+- LinkedIn: [https://www.linkedin.com/in/nata-kostsina/](https://www.linkedin.com/in/nata-kostsina/)
+- Telegram: @kostinata

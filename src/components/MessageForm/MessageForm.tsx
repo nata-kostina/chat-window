@@ -10,7 +10,6 @@ import TextareaAutosize from "react-textarea-autosize";
 import { BsEmojiSmile } from "react-icons/bs";
 import { IoSendSharp } from "react-icons/io5";
 import { LiaKeyboardSolid } from "react-icons/lia";
-import { ContentEditableEvent } from "react-contenteditable";
 import { AnimatePresence, motion } from "framer-motion";
 
 export const MessageForm: FC = () => {
@@ -18,7 +17,7 @@ export const MessageForm: FC = () => {
   const [value, setValue] = useState("");
   const [isEmojiPickerVisible, setIsEmojiPickerVisible] = useState(false);
   const { sendMessage } = useConversations() as IConversationsContext;
-  const handleOnChange = (event: ContentEditableEvent) => {
+  const handleOnChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setValue(event.target.value);
   };
   const handleSubmit = () => {
