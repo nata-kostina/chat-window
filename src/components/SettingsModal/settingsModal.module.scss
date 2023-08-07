@@ -4,7 +4,7 @@
     & .overlay {
         position: fixed;
         inset: 0;
-        background-color: #5f4d612a;
+        background-color: #5f4d6144;
         z-index: 100;
     }
 
@@ -34,6 +34,10 @@
             border: none;
             background-color: transparent;
             cursor: pointer;
+
+            &:focus-visible {
+                border: 1px solid $color-black;
+            }
         }
 
         & .reactions-list {
