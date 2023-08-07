@@ -3,19 +3,28 @@
 
 .footer {
     flex-shrink: 0;
-    padding: 1rem 0;
     background-color: $color-white;
     border-top: $border-light;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    & .container {
+        @include container;
+    }
+
     .form {
+        padding: 1rem 0;
+
         display: flex;
         justify-content: space-between;
         align-items: end;
 
-        @include container-padding;
-
         & .input {
             flex-grow: 1;
+            min-width: 0;
             padding: 1.3rem 0.7rem;
+            max-height: 100px;
 
             resize: none;
 
@@ -26,6 +35,7 @@
 
             border: none;
             outline: unset;
+
             &::placeholder {
                 color: #ccd7d7;
             }
@@ -38,9 +48,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
             background-color: transparent;
 
             transform: translateY(-0.8rem);
+            cursor: pointer;
 
             &-icon {
                 width: 100%;
@@ -67,10 +79,23 @@
         }
     }
 }
+.picker {
+    flex-grow: 1;
+    background-color: #f6f3fb;
 
-.picker-container {
-    & > * {
-        background-color:  #f6f3fb;
-        border-radius: 0px;
+    &__inner {
+        @include container;
     }
+
+    &-box {
+        max-height: 50vh;
+        & > * {
+            background-color: #f6f3fb;
+            border-radius: 0px;
+        }
+    }
+}
+
+.emoji {
+    font-family: $font-emoji, sans-serif;
 }

@@ -4,19 +4,18 @@ import { IMessageBubble } from "./interface";
 import { TbDotsVertical } from "react-icons/tb";
 import cn from "classnames";
 import { IoCheckmarkDone } from "react-icons/io5";
+import { AnimatePresence } from "framer-motion";
+import { timeFormatter } from "../../tools";
+import { MessageReaction } from "../MessageReaction/MessageReaction";
 
 export const MessageBubble: FC<IMessageBubble> = ({
   message,
   showSettings,
-  removeReaction
+  removeReaction,
 }) => {
-  const timeFormatter = Intl.DateTimeFormat(undefined, {
-    hour: "2-digit",
-    hourCycle: "h24",
-    minute: "2-digit",
-  });
   const formattedDate = timeFormatter.format(message.date);
   const settingsBtnRef = useRef<HTMLButtonElement | null>(null);
+
   return (
     <div className={st["message-container"]}>
       <div
@@ -40,12 +39,16 @@ export const MessageBubble: FC<IMessageBubble> = ({
           >
             <TbDotsVertical className={st["message__settings-icon"]} />
           </button>
-          {message.reaction && (
-            <button type="button"
-             className={st["message__reaction"]}
-             onClick={() => removeReaction(message.id)}
-             >{message.reaction}</button>
-          )}
+          <AnimatePresence mode="wait">
+            {message.reaction && (
+              <MessageReaction
+                messageId={message.id}
+                fromMe={message.fromMe}
+                reaction={message.reaction}
+                removeReaction={removeReaction}
+              />
+            )}
+          </AnimatePresence>
         </div>
         <span className={st["message__author"]}>
           {message.fromMe ? "Me" : message.author}{" "}

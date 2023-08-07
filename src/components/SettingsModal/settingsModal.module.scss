@@ -19,18 +19,28 @@
         align-items: center;
 
         & > * {
-
             background: $color-white;
             border: 1px solid #f7f7f7;
             box-shadow: 4px 4px 4px rgba(200, 198, 198, 0.25);
             border-radius: 4px;
         }
 
+        & .btn {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+
+            outline: unset;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
         & .reactions-list {
             display: flex;
             list-style: none;
             margin-bottom: 0.6rem;
-            padding: 0.4rem 0.6rem;
+            padding: 0.7rem 0.6rem;
 
             &__item {
                 margin: 0 0.3rem;
@@ -47,18 +57,15 @@
             color: $color-black;
             font-size: 1.4rem;
             min-width: 10rem;
+            width: 80%;
             &__item {
                 display: flex;
                 align-items: center;
+                justify-content: start;
                 width: 100%;
 
                 transition: all 0.3s ease;
                 cursor: pointer;
-
-                & .action-btn-container {
-                    padding: 1rem 1.2rem;
-                    cursor: pointer;
-                }
 
                 & .action-icon-container {
                     display: flex;
@@ -75,17 +82,12 @@
                 &:hover {
                     background-color: $color-blue-light;
                 }
-            }
-        }
 
-        & .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            outline: unset;
-            border: none;
-            background-color: transparent;
-            cursor: pointer;
+                & .btn {
+                    width: 100%;
+                    padding: 1rem 1.2rem;
+                }
+            }
         }
     }
 }

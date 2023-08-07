@@ -15,12 +15,14 @@
         padding: 1rem 1.2rem 0.7rem;
         max-width: 80%;
 
-        background-color: $color-primary;
+        background-image: $gradient-primary;
         border-radius: 2rem 2rem 2rem 0;
 
         color: $color-white;
-        font-size: 1.3rem;
+        font-family: $font-emoji;
+        font-size: 1.6rem;
         font-weight: 500;
+        line-height: 1.5;
         white-space: pre-line;
         overflow-wrap: anywhere;
     }
@@ -41,6 +43,7 @@
         align-items: center;
     }
     &__time {
+        font-family: $font-default;
         color: $color-white;
         font-size: 1.2rem;
         line-height: 1.5;
@@ -78,32 +81,10 @@
         }
     }
 
-    &__reaction {
-        position: absolute;
-        right: 0;
-        bottom: -10px;
-        
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-        font-size: 1.3rem;
-        font-family: "Noto Color Emoji", sans-serif;
-        
-        height: 2.5rem;
-        width: 2.5rem;
-        
-        border-radius: 100%;
-        background-color: $color-white;
-        border: $border-light;
-
-        outline: unset;
-    }
-
     &_me {
         align-items: end;
         & .message__body {
-            background-color: $color-secondary;
+            background-image: $gradient-secondary;
             color: $color-black;
             border-radius: 2rem 2rem 0 2rem;
         }
@@ -118,10 +99,6 @@
 
         & .message__settings {
             left: -25px;
-        }
-
-        & .message__reaction {
-            left: 0;
         }
     }
 }

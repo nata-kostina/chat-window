@@ -8,5 +8,5 @@ export interface ISettingsModal {
   hideModal: () => void;
   handleDelete: () => void;
   handleCopy: () => void;
-  toggleReaction: (reaction: string) => void;
+  addReaction: (reaction: string) => void;
 }

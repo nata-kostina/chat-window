@@ -1,22 +1,32 @@
-$color-primary: #5A078B;
-$color-secondary: #E8EFFF;
-$color-primary-tertiary: #420BA1;
-$color-accent: #EE00AB;
+/* COLORS */
+$color-primary: #61128f;
+$color-secondary: #e8efff;
+$color-primary-tertiary: #420ba1;
+$color-accent: #ee00ab;
 
-$color-primary-light: #8345A8;
+$color-primary-light: #8345a8;
 
 $color-black: #232323;
-$color-white: #FFFFFF;
+$color-white: #ffffff;
 $color-green: #008024;
 $color-grey: #909090;
-$color-blue-light: #F1F6FF;
+$color-blue-light: #f1f6ff;
+$color-purple-light: rgb(210 150 232 / 40%);
 
 $color-text-default: #212529;
 
-$box-shadow: rgb(245, 248, 255) 0px 4px 4px 0px;
+$gradient-primary: linear-gradient(to top, $color-primary, lighten($color-primary, 8%));
+$gradient-secondary: linear-gradient(to top, $color-secondary, lighten($color-secondary, 3%));
 
+/* EFFECTS */
+$box-shadow: rgb(245, 248, 255) 0px 4px 4px 0px;
+$border-light: 1px solid #f4eeff;
+
+/* FONTS */
 $font-default: "Poppins";
 $font-emoji: "Noto Color Emoji";
 
-$size-header: 8rem;
-$border-light: 1px solid #f4eeff;
+/* BREAKPOINTS */
+$bp-medium: 950px;
+$bp-small: 768px;
+$bp-smallest: 376px;

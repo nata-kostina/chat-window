@@ -1,0 +1,28 @@
+@import "../../styles/variables";
+
+.message__reaction {
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.3rem;
+    font-family: "Noto Color Emoji", sans-serif;
+
+    height: 2.5rem;
+    width: 2.5rem;
+
+    border-radius: 100%;
+    background-color: $color-white;
+    border: $border-light;
+
+    outline: unset;
+    cursor: pointer;
+
+    &_me {
+        left: -1.8rem;
+    }
+}

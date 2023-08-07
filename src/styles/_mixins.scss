@@ -1,3 +1,13 @@
-@mixin container-padding {
-    padding: 0px 1rem;
+@mixin container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @media screen and (min-width: $bp-medium) {
+        padding-left: 5rem;
+        padding-right: 5rem;
+        max-width: 1024px;
+    }
 }

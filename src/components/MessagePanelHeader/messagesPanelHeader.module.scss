@@ -5,13 +5,21 @@
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    padding: 1.5rem 0;
-    @include container-padding;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 
-    height: $size-header;
-    background-color: rgba($color-primary, 0.7);
+    height: 8rem;
+    background-color: rgba($color-primary, 0.6);
 
     border-end-end-radius: 40px;
+
+    @media screen and (min-width: $bp-medium) {
+        border-end-end-radius: 0px;
+    }
+
+    & .container {
+        @include container;
+    }
 
     & .user {
         display: grid;

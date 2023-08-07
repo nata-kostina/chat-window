@@ -7,6 +7,8 @@ import React, {
 } from "react";
 import { IMessage } from "./../types";
 import { v4 as uuid } from "uuid";
+import { generateMessage } from "../tools";
+import Sound from "../assets/sound.mp3";
 
 export interface IConversationsContext {
   conversation: IMessage[];
@@ -28,82 +30,12 @@ interface ConversationsProviderProps {
 export const ConversationsProvider = ({
   children,
 }: ConversationsProviderProps) => {
-  const [conversation, setConversation] = useState<IMessage[]>([
-    {
-      id: "12d3",
-      author: "Silwia Spencer",
-      body: "1111111111",
-      date: Date.now(),
-      fromMe: false,
-    },
-    {
-      id: "23er4",
-      author: "Me",
-      body: "2222222",
-      date: Date.now(),
-      fromMe: true,
-    },
-    {
-      id: "1sc2er3",
-      author: "Silwia Spencer",
-      body: "3333333",
-      date: Date.now(),
-      fromMe: false,
-    },
-    {
-      id: "23g4",
-      author: "Me",
-      body: "444444444",
-      date: Date.now(),
-      fromMe: true,
-    },
-    {
-      id: "12r3",
-      author: "Silwia Spencer",
-      body: "55555555555",
-      date: Date.now(),
-      fromMe: false,
-    },
-    {
-      id: "2334",
-      author: "Me",
-      body: "66666666666",
-      date: Date.now(),
-      fromMe: true,
-    },
-    {
-      id: "12erk3",
-      author: "Silwia Spencer",
-      body: "777777777",
-      date: Date.now(),
-      fromMe: false,
-    },
-    {
-      id: "2t34",
-      author: "Me",
-      body: "88888888",
-      date: Date.now(),
-      fromMe: true,
-    },
-    {
-      id: "12er3",
-      author: "Silwia Spencer",
-      body: "99999999999",
-      date: Date.now(),
-      fromMe: false,
-    },
-    {
-      id: "23h4",
-      author: "Me",
-      body: "",
-      date: Date.now(),
-      fromMe: true,
-    },
-  ]);
+  const [conversation, setConversation] = useState<IMessage[]>([]);
 
-  const addMessageToConversation = (message: IMessage) => {
-    console.log(message);
+  const addMessageToConversation = async (message: IMessage) => {
     setConversation((prevConversation) => [...prevConversation, message]);
+    const audio = new Audio(Sound);
+    audio.play().catch(() => {});
   };
   const deleteMessageFromConversation = (messageId: string) => {
     const filteredMessages = conversation.filter(
@@ -130,17 +62,13 @@ export const ConversationsProvider = ({
   };
 
   useEffect(() => {
-    //       const newMessage = generateMessage();
-    //   addMessageToConversation(newMessage);
-    //       const newMessage2 = generateMessage();
-    //   addMessageToConversation(newMessage2);
-    // const interval = setInterval(() => {
-    //   const newMessage = generateMessage();
-    //   addMessageToConversation(newMessage);
-    // }, 9000);
-    // return () => {
-    //   clearInterval(interval);
-    // };
+    const interval = setInterval(() => {
+      const newMessage = generateMessage();
+      addMessageToConversation(newMessage);
+    }, 8000);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return (

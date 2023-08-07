@@ -14,3 +14,8 @@ export const generateMessage = (): IMessage => {
     fromMe: false,
   };
 };
+export const timeFormatter = Intl.DateTimeFormat(undefined, {
+  hour: "2-digit",
+  hourCycle: "h24",
+  minute: "2-digit",
+});
